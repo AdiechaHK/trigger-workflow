@@ -5,6 +5,8 @@ inputs:
     description: 'Repo owner/name'
   repo_token:
     description: 'The GITHUB_TOKEN secret'
+  event_type:
+    description: 'name of the event which we want to dispatch'
 runs:
   using: node12
   main: index.js

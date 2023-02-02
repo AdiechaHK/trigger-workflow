@@ -7,6 +7,7 @@ const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch
         try {
             const path = process.env.INPUT_REPO_PATH;
             const token = process.env.INPUT_REPO_TOKEN;
+            const event_type = process.env.INPUT_EVENT_TYPE;
             const url = `https://api.github.com/repos/${path}/dispatches`;
             await fetch(url, {
                 method: 'POST',
@@ -15,7 +16,7 @@ const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch
                     "X-GitHub-Api-Version": "2022-11-28",
                     "Authorization": `Bearer ${token}`
                 },
-                body: JSON.stringify({"event_type":"sync-folder"})
+                body: JSON.stringify({event_type})
             });
             core.info('Workflow Triggered successfully.')
         } catch (error) {
