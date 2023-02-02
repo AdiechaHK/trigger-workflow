@@ -1,6 +1,8 @@
 name: "Trigger workflow"
 description: "This will trigger workflow from another workflow. even from another repo."
 inputs:
+  repo_path:
+    description: 'Repo owner/name'
   repo_token:
     description: 'The GITHUB_TOKEN secret'
 runs:
