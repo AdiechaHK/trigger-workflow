@@ -1,0 +1,5 @@
+name: "Trigger workflow"
+description: "This will trigger workflow from another workflow. even from another repo."
+runs:
+  using: node12
+  main: index.js
